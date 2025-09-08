@@ -15,22 +15,47 @@ Ele permite gerenciar **autores, livros e empréstimos**, com operações CRUD (
 
 ## 📂 Estrutura do projeto
 
-Library/
+Biblioteca/
 ├── Controllers/
-│ ├── BooksController.cs
-│ ├── AuthorsController.cs
-│ └── LoansController.cs
+│ ├── AuthorsController.cs # CRUD de autores
+│ ├── BooksController.cs # CRUD de livros
+│ └── LoansController.cs # CRUD de empréstimos
+│
 ├── Models/
-│ ├── Book.cs
-│ ├── Author.cs
-│ └── Loan.cs
+│ ├── Author.cs # Entidade Autor
+│ ├── Book.cs # Entidade Livro (relacionado a Autor)
+│ └── Loan.cs # Entidade Empréstimo (relacionado a Livro)
+│
 ├── Data/
-│ └── Context.cs
+│ └── Context.cs # DbContext (EF Core)
+│
+├── Migrations/ # Arquivos de migrations do EF Core
+│
 ├── Views/
-│ ├── Books/
-│ ├── Authors/
-│ └── Loans/
-└── Biblioteca.csproj
+│ ├── Authors/ # Views de Autores
+│ │ ├── Index.cshtml
+│ │ ├── Create.cshtml
+│ │ ├── Edit.cshtml
+│ │ └── Details.cshtml
+│ │
+│ ├── Books/ # Views de Livros
+│ │ ├── Index.cshtml
+│ │ ├── Create.cshtml
+│ │ ├── Edit.cshtml
+│ │ └── Details.cshtml
+│ │
+│ └── Loans/ # Views de Empréstimos
+│ ├── Index.cshtml
+│ ├── Create.cshtml
+│ ├── Edit.cshtml
+│ └── Details.cshtml
+│
+├── wwwroot/ # Arquivos estáticos (CSS, JS, imagens)
+│
+├── appsettings.json # Configurações (ex: Connection String)
+├── Program.cs # Configuração inicial da aplicação
+├── Startup.cs (se houver) # Configuração de serviços e pipeline
+└── Biblioteca.csproj # Arquivo de projeto .NET
 
 
 ---
